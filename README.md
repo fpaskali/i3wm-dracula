@@ -1,5 +1,5 @@
 # i3wm-dracula
-Backup of the dotfiles of my i3-dracula setup
+Backup of dotfiles of my i3-dracula setup
 
 ![](preview.png)
 
