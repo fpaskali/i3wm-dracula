@@ -1,0 +1,4 @@
+Browser,firefox,firefox
+Terminal,exo-open --launch TerminalEmulator ,terminal
+File manager,thunar,thunar
+^sep()

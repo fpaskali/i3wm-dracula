@@ -1,0 +1,12 @@
+#! /bin/sh
+DATEFMT=${DATEFMT:-"+%a %d.%m.%Y %H:%M:%S"}
+SHORTFMT=${SHORTFMT:-"+%H:%M:%S"}
+
+case "$BLOCK_BUTTON" in
+  1|2|3) 
+
+	i3-msg -q "exec gsimplecal \
+	    > /dev/null"
+esac
+echo "$LABEL$(date "$DATEFMT")"
+echo "$LABEL$(date "$SHORTFMT")"

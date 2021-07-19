@@ -1,0 +1,8 @@
+^sep()
+Lock,i3lock -B=10 --ringcolor=663AB7FF --keyhlcolor=BC2BCFFF && sleep 1,system-lock-screen
+Exit,^checkout(exit),system-shutdown
+^tag(exit)
+Suspend,i3lock -B=10 --ringcolor=663AB7FF --keyhlcolor=BC2BCFFF && systemctl -i suspend,system-log-out
+Logout,i3-msg exit,system-log-out
+Reboot,systemctl -i reboot,system-reboot
+Poweroff,systemctl -i poweroff,system-shutdown

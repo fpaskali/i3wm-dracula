@@ -1,0 +1,133 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+SCRIPT_DIR=/home/filip/.config/i3blocks/blocklets
+
+# Global properties
+separator=true
+separator_block_width=10
+
+[mediaplayer]
+command=$SCRIPT_DIR/mediaplayer
+label=
+instance=spotify
+interval=5
+signal=10
+color=#50FA7B
+#color="#1ABA71"
+
+[cpu_usage]
+command=$SCRIPT_DIR/cpu_usage
+interval=5
+LABEL= 
+T_CRIT=95
+T_WARN=80
+DECIMALS=0
+color=#bd93f9
+
+[memory]
+command=$SCRIPT_DIR/memory
+label= 
+interval=30
+color=#bd93f9
+
+[temperature]
+command=$SCRIPT_DIR/temperature
+label= 
+interval=10
+T_WARN=80
+T_CRIT=90
+color=#bd93f9
+
+[battery]
+command=$SCRIPT_DIR/battery
+interval=30
+#LABEL=BAT 
+LABEL=⚡ 
+#BAT_NUMBER=0
+color=#bd93f9
+
+[nvidia]
+label=RTX 2060
+command=$SCRIPT_DIR/nvidia-status
+interval=30
+color=#50fa7b
+
+[disk_root]
+command=$SCRIPT_DIR/disk
+LABEL= 
+DIR=/
+ALERT_LOW=10
+interval=30
+color=#bd93f9
+
+[disk_home]
+command=$SCRIPT_DIR/disk
+LABEL= 
+DIR=/home/filip
+ALERT_LOW=10
+interval=30
+color=#bd93f9
+
+[essid]
+command=$SCRIPT_DIR/essid
+LABEL=
+interval=60
+INTERFACE=wlp0s20f3
+WIDTH=200
+color=#50fa7b
+
+[volume-pulseaudio]
+command=$SCRIPT_DIR/volume-pulseaudio
+interval=once
+signal=10
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+##exposed format variables: ${SYMB}, ${VOL}, ${INDEX}, ${NAME}
+#LONG_FORMAT="${SYMB} ${VOL}% [${NAME}]"
+#SHORT_FORMAT="${SYMB} ${VOL}% [${INDEX}]"
+LONG_FORMAT="${SYMB} ${VOL}%"
+SHORT_FORMAT="${SYMB}"
+AUDIO_HIGH_SYMBOL=
+#AUDIO_MED_THRESH=50
+AUDIO_MED_SYMBOL=
+#AUDIO_LOW_THRESH=0
+AUDIO_LOW_SYMBOL=
+AUDIO_MUTED_SYMBOL=
+#AUDIO_DELTA=5
+DEFAULT_COLOR="#bd93f9"
+#MUTED_COLOR="#a0a0a0"
+#USE_ALSA_NAME=0
+#USE_DESCRIPTION=0
+## SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
+#SUBSCRIBE=0
+
+[miccontrol]
+command=$SCRIPT_DIR/miccontrol
+#label=MIC 
+SOURCE=alsa_input.pci-0000_00_1f.3.analog-stereo
+interval=10
+signal=10
+color=#bd93f9
+
+[calendar]
+command=$SCRIPT_DIR/calendar
+interval=1
+DATEFMT=+%d.%m  %H:%M
+SHORTFMT=+ %H:%M
+HEIGHT=180
+WIDTH=200
+color=#bd93f9
+
+[keylayout]
+command=xkb-switch;xkb-switch -W
+label=
+interval=persist
+color=#50fa7b
+
+[filip]
+full_text=""
+label="separator"
